@@ -1,0 +1,16 @@
+<div style="position: fixed; top: 0; z-index: 90" class="w-100 border border-0 border-bottom border-top bg-light d-inline-block">
+    <button class="float-start border border-0 p-3 border-end" onclick="toggleSideBar()">
+        <i class="bars icon m-0"></i>
+    </button>
+    <div style="margin-top: 10px" class="float-start fs-4 fw-bold mx-4">UMRAH SYSTEM</div>
+    <button type="button" class="float-end ui right labeled icon button grey m-2" data-bs-toggle="modal" data-bs-target="#logoutModal">
+        <i class="power off icon"></i> Logout </button>
+</div>
+<div>
+    <div id="sidebar" class="sidebar bg-light border border-0 border-end pt-5">
+        <a class="py-2 px-4 border border-0 border-bottom border-top superadmin-menu d-none" href="/admins/page">Admin</a>
+        <a class="py-2 px-4 border border-0 border-bottom admin-menu d-none" href="/admin/page">Profile</a>
+        <a class="py-2 px-4 border border-0 border-bottom admin-menu d-none" href="/agency/page">Agency</a>
+        <a class="py-2 px-4 border border-0 border-bottom admin-menu d-none" href="/filters/page">Filter</a>
+    </div>
+    <div id="content" class="content">

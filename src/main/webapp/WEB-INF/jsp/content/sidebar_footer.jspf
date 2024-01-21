@@ -1,0 +1,26 @@
+    </div>
+</div>
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body"> Continue logout? </div>
+            <div class="modal-footer">
+                <button class="small ui negative right labeled icon button" data-bs-dismiss="modal">Cancel <i class="close icon"></i></button>
+                <button class="small ui positive right labeled icon button" onclick="onLogout()">Confirm <i class="checkmark icon"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+	function toggleSideBar() {
+		let sidebar = document.getElementById("sidebar");
+		sidebar.classList.toggle("opposite-sidebar");
+		let content = document.getElementById("content");
+		content.classList.toggle("opposite-content");
+	}
+	
+	function onLogout() {
+		sessionStorage.clear();
+		window.location.href = "/";
+	}
+</script>

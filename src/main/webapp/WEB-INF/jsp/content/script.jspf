@@ -1,0 +1,54 @@
+<script type="text/javascript">
+	function setForm(formId, formObject) {
+		$("form#" + formId + " :input").each(function(){
+			if ($(this).is("input")) {
+				if ($(this).attr('type') !== 'file') {
+					if ($(this).attr('type') === 'date') {
+						if (formObject[$(this).attr("name")]) {
+				    		let jsDateTime = new Date(formObject[$(this).attr("name")]);
+				    		let jsDateTimeOffset = new Date(jsDateTime.setMinutes(jsDateTime.getMinutes() - jsDateTime.getTimezoneOffset()));
+				    		let birthDate = jsDateTimeOffset.toISOString().split('T')[0];
+							$(this).val(birthDate);
+				    	}
+					} else {
+						$(this).val(formObject[$(this).attr("name")]);
+					}
+				}
+			} else if ($(this).is("textarea") || $(this).is("select")) {
+				$(this).val(formObject[$(this).attr("name")]);
+			}
+		});
+	}
+	
+	function resetForm(formId) {
+		$("form#" + formId + " :input").each(function(){
+			if ($(this).is("input") || $(this).is("textarea") || $(this).is("select")) {
+				$(this).val('');
+			}
+		});
+	}
+	
+	function disableForm(formId) {
+		$("form#" + formId + " :input").each(function(){
+			if ($(this).is("input") || $(this).is("textarea") || $(this).is("select")) {
+				$(this).prop("disabled", true);
+			}
+		});
+	}
+	
+	function enableForm(formId) {
+		$("form#" + formId + " :input").each(function(){
+			if ($(this).is("input") || $(this).is("textarea") || $(this).is("select")) {
+				$(this).prop("disabled", false);
+			}
+		});
+	}
+	
+	function displayPopup() {
+		document.getElementById('popupId').style.animation = 'smooth-appear 0.5s ease forwards';
+	}
+	
+	function hidePopup() {
+		document.getElementById('popupId').style.animation = 'smooth-disappear 0.5s ease forwards';
+	}
+</script>
